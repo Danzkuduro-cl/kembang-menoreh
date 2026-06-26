@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+:root {
+  font-family: "Inter", sans-serif;
+}
+
+.font-luxury {
+  font-family: "Cormorant Garamond", serif;
+}
