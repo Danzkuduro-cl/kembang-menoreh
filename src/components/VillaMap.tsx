@@ -13,7 +13,7 @@ interface Pin {
 }
 
 const PINS: Pin[] = [
-  { id: "villa-utama",   name: "Villa Utama",       desc: "Villa induk 4 kamar tidur, ruang tamu & dapur privat",        icon: "🏛️", x: "18%", y: "62%" },
+  { id: "villa-utama",   name: "Villa Utama",      desc: "Villa induk 4 kamar tidur, ruang tamu & dapur privat",        icon: "🏛️", x: "18%", y: "62%" },
   { id: "kamar-a",       name: "Villa Kamar A",      desc: "Suite 1 kamar, king bed, kamar mandi outdoor",                icon: "🛏️", x: "32%", y: "45%" },
   { id: "kamar-b",       name: "Villa Kamar B",      desc: "Suite 1 kamar, twin bed, view sawah",                         icon: "🛏️", x: "48%", y: "38%" },
   { id: "pool",          name: "Kolam Renang",        desc: "Infinity pool 18m, buka 06.00–22.00",                         icon: "🏊", x: "62%", y: "50%" },
@@ -106,7 +106,6 @@ export default function VillaMap() {
         {PINS.map((pin) => {
           const isActive = activePin === pin.id;
           const { side, above } = getTooltipPosition(pin);
-          const activePinData = PINS.find((p) => p.id === pin.id)!;
 
           return (
             <div
@@ -176,13 +175,13 @@ export default function VillaMap() {
                       style={{ fontFamily: "'Inter', sans-serif" }}
                       className="text-[13px] font-[500] text-white mb-1 relative z-10"
                     >
-                      {activePinData.name}
+                      {pin.name}
                     </p>
                     <p
                       style={{ fontFamily: "'Inter', sans-serif" }}
                       className="text-[11px] text-[#C6A77D] leading-[1.55] relative z-10"
                     >
-                      {activePinData.desc}
+                      {pin.desc}
                     </p>
                   </motion.div>
                 )}
@@ -195,11 +194,11 @@ export default function VillaMap() {
       {/* Legend */}
       <div className="flex flex-wrap gap-x-6 gap-y-2 mt-5">
         {[
-          { label: "Akomodasi", icons: ["🛏️", "🏛️"] },
-          { label: "Fasilitas", icons: ["🏊", "🍽️", "🚻", "🅿️"] },
-          { label: "Wellness & Alam", icons: ["🌸", "🧘", "💧", "🌿"] },
-          { label: "Layanan", icons: ["ℹ️"] },
-        ].map(({ label, icons }) => (
+          { label: "Akomodasi" },
+          { label: "Fasilitas" },
+          { label: "Wellness & Alam" },
+          { label: "Layanan" },
+        ].map(({ label }) => (
           <div key={label} className="flex items-center gap-2">
             <div
               className="w-2.5 h-2.5 rounded-full border-2 border-[#C6A77D]"
