@@ -6,7 +6,6 @@ const navItems = [
   "Experience",
   "Suites",
   "Wellness",
-  "Dining",
 ];
 
 export default function Navbar() {
